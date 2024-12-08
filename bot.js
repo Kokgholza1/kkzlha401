@@ -2,6 +2,7 @@ const { Client, GatewayIntentBits, REST, Routes, Collection } = require('discord
 const fs = require('fs');
 const path = require('path');
 const keywordResponder = require('./handlers/keywordResponder');
+const startKeepAlive = require('./keep_alive'); // Importa el servidor "keep-alive"
 require('dotenv').config(); // Usa variables de entorno para seguridad
 
 // Variables de configuración
@@ -12,6 +13,9 @@ const GUILD_ID = process.env.GUILD_ID;
 if (!TOKEN || !CLIENT_ID || !GUILD_ID) {
     throw new Error('Faltan variables de entorno. Asegúrate de configurar BOT_TOKEN, CLIENT_ID y GUILD_ID.');
 }
+
+// Inicia el servidor "keep-alive"
+startKeepAlive();
 
 // Inicialización del cliente
 const bot = new Client({
