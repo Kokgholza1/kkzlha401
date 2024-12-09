@@ -1,5 +1,5 @@
 // Lista de palabras clave
-const keywords = ['clan tag', 'tag del clan', 'prefijo'];
+const keywords = ['clantag', 'tagclan', 'prefijo'];
 
 // Respuesta del bot
 const clanTagResponse = 'El tag del clan que debes poner dentro del launcher es **F.E.R|**';
